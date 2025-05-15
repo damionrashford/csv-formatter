@@ -1,0 +1,29 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background: #1e293b;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.footer {
+  background: #f1f5f9;
+  color: #222;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
