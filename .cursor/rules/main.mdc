@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: CSV Formatter App – Product Intent, Browser-Only Design, and GitHub Pages Deployment
+globs: []
+alwaysApply: true
+---
+
+## What We Are Building
+A modern **React-based CSV Formatter** web app that enables users to:
+- Upload CSV files
+- Configure and apply transformations to columns
+- Extract (and optionally deduplicate/merge) individual columns
+- Preview and download their transformed CSV
+
+## Non-Negotiable Deployment Target: GitHub Pages
+- This application will be served **as a static site** via **GitHub Pages**.
+  - All logic (file handling, parsing, formatting, extraction, transformation) **must run in the browser/client**, nothing server-side.
+  - No runtime Node.js/Express, no API endpoints—**only static assets** (`index.html`, JS/CSS, etc).
+  - Use React Router’s `HashRouter` if necessary to ensure robust client-side routing without server redirects.
+  - Be mindful of routing, asset loading, and relative paths—test the app from `/` and `/subdirectory/` routes.
+
+## Key Technical Decisions
+- Use **PapaParse** for all CSV parsing/serialization.
+- Architecture: Modular React ("Card" components: UploadCard, FormatOptionsCard, PreviewCard, etc.)
+- State management: Route/page-level React state.
+- Persistence: Only use browser APIs such as `localStorage` for settings/history.
+- File operations: All uploads/downloads are **in-browser** (`FileReader`, `Blob`, `URL.createObjectURL`, `navigator.clipboard`).
+
+## Examples and Guidance
+- When implementing routing, prefer `<HashRouter>` in deployment, use `<Link>` and `<NavLink>` for internal navigation.
+- When testing, always check the deployed site on GitHub Pages to confirm no broken links, navigation, downloads, or file operations.
+- Never assume a server-side runtime or ability to perform dynamic HTTP routing.
+- When adding code, always ask: “Does this run purely as a static browser app, with zero backend dependencies?”
+
+## Best Practices
+- Modularize: Each card/component owns its own logic/UI—do not mix concerns.
+- Comment utilities and custom hooks so future contributors understand browser/non-server constraints.
+- Keep each React component under ~300 lines.
+- Everything must "just work" when the site is loaded from any static host, not just localhost.
+
+---

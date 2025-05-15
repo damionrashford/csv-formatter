@@ -1,0 +1,50 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: GitHub Pages and GitHub Actions Deployment Requirements
+globs: []
+alwaysApply: true
+---
+
+# GitHub Pages and CI/CD Deployment Rule
+
+**All deployments must be automated and compatible with GitHub Pages.**
+
+## Requirements
+
+- The application must be fully static, client-side, and deploy as a Single Page Application (SPA) with React.
+- The project's `package.json` must have a valid `homepage` field (e.g. `"homepage": "https://<user>.github.io/<repo>"`).
+- All internal routing must use `<HashRouter>` or equivalent to ensure working navigation on GitHub Pages.
+- A deploy workflow must exist at `.github/workflows/gh-pages.yml` that:
+  - Installs dependencies
+  - Builds the React app (typically to `dist/` with Vite or similar)
+  - Automatically deploys the build output to the `gh-pages` branch via GitHub Actions
+  - Uses the official [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages) action or equivalent
+
+## Example Workflow
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

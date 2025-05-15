@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Keep UI organized by card components
+globs: [src/components/cards/*.jsx]
+alwaysApply: true
+---
+- Each card UI should be a self-contained component under the `components/cards/` directory.
+- Example components: UploadCard, FormatOptionsCard, PreviewCard.
+- Card components should only control their own logic and visuals – pass data/state via props.

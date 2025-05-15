@@ -1,36 +1,32 @@
-# Welcome to React Router!
+# CSV Formatter (React SPA)
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, production-ready static React app for formatting CSV files. Deployed automatically to GitHub Pages.
 
 ## Features
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- Upload, preview, and format CSV files in-browser
+- Modular card-based UI (Upload, Format Options, Preview)
+- All logic runs client-side (no backend)
+- Automated deployment to GitHub Pages via GitHub Actions
+- [PapaParse](https://www.papaparse.com/) for CSV parsing
 
 ## Getting Started
 
 ### Installation
 
-Install the dependencies:
-
 ```bash
 npm install
 ```
 
-### Development
+### Local Development
 
-Start the development server with HMR:
+Start the development server:
 
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+Your app will be available at `http://localhost:5173` (or as shown in your terminal).
 
 ## Building for Production
 
@@ -40,46 +36,36 @@ Create a production build:
 npm run build
 ```
 
-## Deployment
+### Test Production Build Locally
 
-### Docker Deployment
-
-To build and run using Docker:
+To preview the production build locally:
 
 ```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
+npx serve dist
 ```
 
-The containerized application can be deployed to any platform that supports Docker, including:
+## Deployment (Automated)
 
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
+Deployment is fully automated using [GitHub Actions](.github/workflows/gh-pages.yml):
 
-### DIY Deployment
+- On every push to `main`, the app is built and deployed to the `gh-pages` branch using [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
+- The app is served as a static site via GitHub Pages.
+- All routing uses HashRouter for compatibility with static hosting.
 
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
+### Live App URL
 
-Make sure to deploy the output of `npm run build`
+After setup, your app will be live at:
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+https://damionrashford.github.io/csv-formatter
 ```
 
-## Styling
+## How It Works
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- All code runs in the browser. No server or backend required.
+- All navigation uses HashRouter for SPA compatibility on GitHub Pages.
+- User settings/history are stored in localStorage.
 
 ---
 
-Built with ❤️ using React Router.
+Built with ❤️ using React, React Router, and PapaParse.

@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: State management convention
+globs: [src/pages/*.jsx, src/routes/*.jsx]
+alwaysApply: true
+---
+- Store main app state (CSV rows, settings, results) in your route or page component.
+- Pass data and change handlers down to lower components via props.
+- Do not keep isolated state in child card components unless it’s truly local to their UI.

@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Project routing strategy
+globs: [src/routes/*.jsx]
+alwaysApply: true
+---
+- Use a route file for each main view (e.g. Home, Formatter).
+- Use React Router `<Routes>` and `<Route>` components to declare navigation structure.
+- Use `<Link>` or `<NavLink>` (not plain `<a>`) for internal navigation.
+- Each page/route should own its own main section of state, not global variables.

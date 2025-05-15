@@ -2,15 +2,18 @@
   "name": "csv-formatter",
   "private": true,
   "type": "module",
+  "homepage": "https://damionrashford.github.io/csv-formatter",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js"
+    "start": "react-router-serve ./build/server/index.js",
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@react-router/node": "^7.5.3",
     "@react-router/serve": "^7.5.3",
     "isbot": "^5.1.27",
+    "papaparse": "^5.5.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.5.3"

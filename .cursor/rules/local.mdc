@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: Persist user settings and history
+globs: [src/components/utils/*.js, src/hooks/useLocalStorage.js]
+alwaysApply: true
+---
+- Preferences (like formatting rules, extraction options, file history) should always be stored and loaded from `localStorage`.
+- Use a consistent storage key prefix: `csvFormatter.*`
+- Utility functions for saving/loading from localStorage must be provided in the utils directory.
