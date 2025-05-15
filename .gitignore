@@ -1,9 +1,32 @@
+# macOS system files
 .DS_Store
+
+# Node modules
 /node_modules/
 
-# React Router
+# React Router build/cache
 /.react-router/
 /build/
+/dist/
 
+# Editor/project files
+.vscode/
+.idea/
+.cursor/
+
+# Environment variables
 .env
 .env.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test coverage
+coverage/
+
+# Editor swap/backup files
+*~
+*.swp
+*.swo
