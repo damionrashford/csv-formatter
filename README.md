@@ -1,71 +1,40 @@
-# CSV Formatter (React SPA)
+# CSV Formatter
 
-A modern, production-ready static React app for formatting CSV files. Deployed automatically to GitHub Pages.
+A fast, private, and easy-to-use tool for uploading, formatting, extracting, and downloading CSV files—right in your browser.
 
 ## Features
 
-- Upload, preview, and format CSV files in-browser
-- Modular card-based UI (Upload, Format Options, Preview)
-- All logic runs client-side (no backend)
-- Automated deployment to GitHub Pages via GitHub Actions
-- [PapaParse](https://www.papaparse.com/) for CSV parsing
+- **Upload CSV**: Drag and drop or browse to upload your CSV file.
+- **Format Columns**: Transform, trim, or remove columns. Change case, format numbers, dates, and more.
+- **Extract Values**: Instantly extract and deduplicate values from any column.
+- **Preview**: See your formatted CSV and extracted values before downloading.
+- **Download**: Download your transformed CSV with a single click.
+- **Privacy First**: 100% client-side. Your data never leaves your device.
 
-## Getting Started
+## How to Use
 
-### Installation
+1. **Upload** your CSV file using the upload card.
+2. **Configure** formatting and extraction options as needed.
+3. **Preview** the results instantly.
+4. **Download** your formatted CSV or copy extracted values.
 
-```bash
-npm install
-```
+## Live Demo
 
-### Local Development
+👉 [Open CSV Formatter](https://damionrashford.github.io/csv-formatter)
 
-Start the development server:
+## FAQ
 
-```bash
-npm run dev
-```
+- **Is my data safe?**
+  - Yes! All processing happens in your browser. No files are uploaded to any server.
+- **What file types are supported?**
+  - Standard `.csv` files (comma-separated values).
+- **Can I use this on mobile?**
+  - Yes, the app is mobile-friendly.
 
-Your app will be available at `http://localhost:5173` (or as shown in your terminal).
+## Need Help?
 
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-### Test Production Build Locally
-
-To preview the production build locally:
-
-```bash
-npx serve dist
-```
-
-## Deployment (Automated)
-
-Deployment is fully automated using [GitHub Actions](.github/workflows/gh-pages.yml):
-
-- On every push to `main`, the app is built and deployed to the `gh-pages` branch using [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages).
-- The app is served as a static site via GitHub Pages.
-- All routing uses HashRouter for compatibility with static hosting.
-
-### Live App URL
-
-After setup, your app will be live at:
-
-```
-https://damionrashford.github.io/csv-formatter
-```
-
-## How It Works
-
-- All code runs in the browser. No server or backend required.
-- All navigation uses HashRouter for SPA compatibility on GitHub Pages.
-- User settings/history are stored in localStorage.
+If you have questions or feedback, please [open an issue](https://github.com/damionrashford/csv-formatter/issues) or visit the [GitHub repo](https://github.com/damionrashford/csv-formatter).
 
 ---
 
-Built with ❤️ using React, React Router, and PapaParse.
+Built with ❤️ using React, PapaParse, and GitHub Pages.
